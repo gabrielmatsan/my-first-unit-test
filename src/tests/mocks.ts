@@ -1,6 +1,6 @@
 import { vi } from "vitest";
 
-// Mock da função hashGenerator
+// Mock da função hashGenerator para simular o hash de senhas
 export const hashGeneratorMock = vi
   .fn()
   .mockImplementation(async (password: string) => {
