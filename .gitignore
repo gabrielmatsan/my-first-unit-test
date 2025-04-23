@@ -1,1 +1,4 @@
 node_modules
+src/tests/delete-student.usecase.spec.ts
+src/tests/get-student.usecase.spec.ts
+src/tests/update-student.usecase.spec.ts
