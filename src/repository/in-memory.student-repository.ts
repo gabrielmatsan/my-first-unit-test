@@ -2,7 +2,7 @@ import type { IStudentRepository } from "../interface/student-repository.interfa
 import type { StudentDTO } from "../models/student.model";
 
 export class InMemoryStudentRepository implements IStudentRepository {
-  public items: { name: string; cpf: string }[] = [];
+  public items: StudentDTO[] = [];
   async getStudent(cpf: string): Promise<StudentDTO | null> {
     const student = this.items.find((student) => student.cpf === cpf);
 
@@ -19,6 +19,7 @@ export class InMemoryStudentRepository implements IStudentRepository {
     const studentCreated = {
       name: student.name,
       cpf: student.cpf,
+      password: student.password,
     };
 
     this.items.push(studentCreated);
@@ -38,7 +39,7 @@ export class InMemoryStudentRepository implements IStudentRepository {
     );
 
     if (indexOldStudent === -1) {
-      return
+      return;
     }
 
     this.items[indexOldStudent] = student;
